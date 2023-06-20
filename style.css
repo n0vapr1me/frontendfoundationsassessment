@@ -1,11 +1,13 @@
-/* -------  General Styles ------- */
+/* ------- General Styles ------- */
 
 body {
   font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 12vw;
   font-weight: 400;
   margin: 0 10px 10px 10px;
   text-align: center;
@@ -31,14 +33,16 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  height: auto;
 }
 
-/* ---  Groups & Items --- */
+/* --- Groups & Items --- */
 
 .group {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .item {
@@ -50,7 +54,7 @@ main img {
   flex: 2;
 }
 
-/* -------  Navigation ------- */
+/* ------- Navigation ------- */
 
 header {
   background-color: #ff385c;
@@ -58,41 +62,65 @@ header {
   text-align: center;
 }
 
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 16vw;
   color: #fff;
+  margin-bottom: 10px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 header nav ul li {
-  list-style-type: none;
+  margin-right: 20px;
+}
+
+header nav ul li:last-child {
+  margin-right: 0;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
 }
 
 header nav ul li a:hover {
   color: #bdbdbd;
-  text-decoration: none;
 }
 
-/* -------  Search Form ------- */
+/* ------- Search Form ------- */
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 form label {
   font-weight: bold;
 }
 
-form select,
-form input {
-  margin-bottom: 20px;
-  width: 180px;
+form label,
+form input,
+form select {
+  margin-bottom: 10px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 5px;
 }
 
 form button {
@@ -104,16 +132,60 @@ form button {
   width: 100%;
 }
 
-/* -------  Footer ------- */
+/* ------- Footer ------- */
 
 footer {
   background-color: #ff385c;
+  padding: 20px;
+  text-align: center;
 }
 
 footer p {
   color: #fff;
-  text-align: center;
-  padding: 20px;
+  margin: 0;
 }
 
-/* -------  Media Query ------- */
+/* ------- Media Queries ------- */
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  header nav {
+    margin-top: 16px;
+  }
+
+  form {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  form div {
+    flex-direction: column;
+  }
+
+  form input,
+  form select {
+    width: auto;
+  }
+
+  form button {
+    width: auto;
+  }
+
+  .group {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 72px;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}
